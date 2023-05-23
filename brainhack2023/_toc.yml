@@ -4,6 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: intro
 - file: page1
 - file: page2
