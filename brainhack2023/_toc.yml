@@ -4,6 +4,5 @@
 format: jb-book
 root: intro
 chapters:
-- file: origins_todo
-- file: how_todo_procrastinators
-- file: origins_procrastinators
+- file: page1
+- file: page2
