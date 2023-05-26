@@ -17,7 +17,7 @@ A fully-rendered HTML version of the book will be built in `todo-procrastinator/
 ### Hosting the book
 
 The html version of the book is hosted on the `gh-pages` branch of this repo. Navigate to your local build and run,
-- `ghp-import -n -p -f todo-procrastinator/_build/html`
+- `ghp-import -n -p -f brainhack2023/_build/html`
 
 This will automatically push your build to the `gh-pages` branch. More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
 
