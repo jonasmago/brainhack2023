@@ -369,9 +369,7 @@
                 
   <div class="section" id="results">
 <span id="id1"></span><h1>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h1>
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/tasks.png" height="200px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/tasks.png" /></p>
 <div class="section" id="progress-overview">
 <h2>Progress overview<a class="headerlink" href="#progress-overview" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://school-brainhack.github.io/">brainhack school</a> provided four weeks of space during which I could work full time on the analysis of this Tulpa dataset. At the end of these four weeks I was able to complete a first draft of all major analyses intended. These analyses include:</p>
@@ -419,12 +417,10 @@ This project website was created using <code class="docutils literal notranslate
 <h3>Deliverable 4: GLM results<a class="headerlink" href="#deliverable-4-glm-results" title="Permalink to this headline">¶</a></h3>
 <p>I have used <code class="docutils literal notranslate"><span class="pre">Nilearn</span></code> to compute a GLM that compares different conditions of the task. Specifically, I am interested in teh respective contrasts between <strong>self</strong>, <strong>tulpa</strong>, and <strong>friend</strong>. I am interested in these contrasts for the preparation and writing phase respectively. I have computed the GLM on fmriprep prepreocessed data. I have then created a design matrix that integrates the timing files (first two columes) as well as well as some movement regressors (see figure below). To incorporate the movement regressors I have used the <code class="docutils literal notranslate"><span class="pre">load_confounds_strategy</span></code> from nilearn with the following parameters: <code class="docutils literal notranslate"><span class="pre">denoise_strategy=&quot;scrubbing&quot;,</span> <span class="pre">motion=&quot;basic&quot;,</span> <span class="pre">wm_csf=&quot;basic&quot;</span></code>.
 I have then computed a second level analysis that combines the individual beta maps into a group level contrast between the different conditions (see design matrix below). As a result I receive z-scores of each voxel, indicating how much that voxel differs across the two compared condition. The plot below displays these z-scores for comparing the self-write with the tulpa-write condition. A z-score of 3.0 is equivalent to a 99% confidence interval, a z-score of 2.3 is equivalent to a 95% confidence interval.</p>
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/dm_first.png" height="420px;" alt=""/>
-   <img src="img/dm_second.png" height="420;" alt=""/>
-   <img src="img/SSW-STW_paired_thres.png" width="400px;" alt=""/>
-   <img src="img/SSW-STW_unpaired.png" width="400px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/dm_first.png" />
+<img alt="task" src="_images/dm_second.png" />
+<img alt="task" src="_images/SSW-STW_paired_thres.png" />
+<img alt="task" src="_images/SSW-STW_unpaired.png" /></p>
 <p>I then used <a class="reference external" href="https://netneurolab.github.io/neuromaps/user_guide/nulls.html">Neuro Maps</a> to compute the pearson-r correlation between the first level outputs computed with Nilearn to those I previously computed with SPM. To test for the significance of these comparisons, I re-computed the pearson-r for random pairs. The r values of the true (matched) pairs have a mean of 61.32 while the mean of the random (unmatched) pairs is 17.09. A two-sample t-test revleaed that this difference is significant: <strong>T-stat: -26.24</strong> and a <strong>p-value=0.000</strong>.</p>
 <blockquote>
 <div><p>:information_source: matched pairs are between software, within subject, within contrast, within run.</p>
@@ -432,23 +428,17 @@ I have then computed a second level analysis that combines the individual beta m
 <blockquote>
 <div><p>:information_source: unmatched pairs are between software, between subject, between contrast, between run</p>
 </div></blockquote>
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/spm_vs_nilearn.png" height="420px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/spm_vs_nilearn.png" /></p>
 </div>
 <div class="section" id="deliverable-5-connectome-results">
 <h3>Deliverable 5: Connectome results<a class="headerlink" href="#deliverable-5-connectome-results" title="Permalink to this headline">¶</a></h3>
 <p>I have parcellated the brain into 39 regions based on the <a class="reference external" href="https://nilearn.github.io/dev/modules/generated/nilearn.datasets.fetch_atlas_msdl.html">probabilistic msdl atlas</a>. A probabilistic atlas assigns a probability to each voxel, indicating how likely it is that that voxel belongs to a specific region. I have then computed the correlation between all of these 39 regions, resulting into a connectome of shape 39*39. Given that that the correlation measure is none directive, the upper and lower triangle of the connectome mirror each other. Below is an example of a connectome for one subject and one condition.</p>
-<div style="text-align: center">
-   <img src="img/connectome.png" width="600px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/connectome.png" /></p>
 </div>
 <div class="section" id="deliverable-6-seed-to-voxel-connectivity-results">
 <h3>Deliverable 6: Seed-to-Voxel connectivity results<a class="headerlink" href="#deliverable-6-seed-to-voxel-connectivity-results" title="Permalink to this headline">¶</a></h3>
 <p>I have previously computed a gPPI for this dataset using CONN. I wanted to replicate this task dependent seed to voxel correlation using Nilearn. I have specified the seed based on the group peak activation in the SMA, using the results from the SPM and Randomise analysis. Seed coordination in MNI space are <code class="docutils literal notranslate"><span class="pre">(-4,</span> <span class="pre">12,</span> <span class="pre">55)</span></code>. I have then constructed a sphere around this voxel with a radius of 5 mm. Using this ROI, correlations to all voxels based by task condition were computed. Below is an illustrative example of the connectivity values for one subject and one condition.</p>
-<div style="text-align: center">
-   <img src="img/gPPI.png" width="600px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/gPPI.png" /></p>
 </div>
 <div class="section" id="deliverable-7-ml-classifier-results">
 <h3>Deliverable 7: ML-classifier results<a class="headerlink" href="#deliverable-7-ml-classifier-results" title="Permalink to this headline">¶</a></h3>
@@ -462,54 +452,38 @@ I have then computed a second level analysis that combines the individual beta m
 <div><p>Average accuracy = 0.76 <br/>
 P-value (on 100 permutations): p=0.00</p>
 </div></blockquote>
-<div style="text-align: center">
-   <img src="img/ml/ml_p-w_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_p-w_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_p-w_glass.png" width="400px;" alt=""/>
-</div>
-<br/>
+<p><img alt="task" src="_images/ml_p-w_conf.png" />
+<img alt="task" src="_images/ml_p-w_weights.png" />
+<img alt="task" src="_images/ml_p-w_glass.png" /></p>
 <p><strong>Write condition</strong></p>
 <blockquote>
 <div><p>Average accuracy = 0.52 <br/>
-P-value (on 100 permutations): p=0.32</p>
+P-value (on 100 permutations): p=0.32
+<img alt="task" src="_images/ml_w_conf.png" />
+<img alt="task" src="_images/ml_w_weights.png" />
+<img alt="task" src="_images/ml_w_glass.png" /></p>
 </div></blockquote>
-<div style="text-align: center">
-   <img src="img/ml/ml_w_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_w_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_w_glass.png" width="400px;" alt=""/>
-</div>
-<br/>
 <p><strong>Prep condition</strong></p>
 <blockquote>
 <div><p>Average accuracy = 0.37 <br/>
 P-value (on 100 permutations): p=0.00</p>
 </div></blockquote>
-<div style="text-align: center">
-   <img src="img/ml/ml_p_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_p_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_p_glass.png" width="400px;" alt=""/>
-</div>
+<p><img alt="task" src="_images/ml_p_conf.png" />
+<img alt="task" src="_images/ml_p_weights.png" />
+<img alt="task" src="_images/ml_p_glass.png" /></p>
 </div>
 <div class="section" id="deliverable-8-deep-neural-network-encoding-results">
 <h3>Deliverable 8: Deep neural network encoding results<a class="headerlink" href="#deliverable-8-deep-neural-network-encoding-results" title="Permalink to this headline">¶</a></h3>
 <p>Building on what I have done with the ML classifiers, I wanted to explore if I could achieve the same resutls with a Neural Netowrk. I used <code class="docutils literal notranslate"><span class="pre">PyTorch</span></code> to build a <code class="docutils literal notranslate"><span class="pre">Multilayer</span> <span class="pre">Perceptron</span></code> with 4 linear layers, 3 rectified linear unit, and one dropout layer with a threshold of 0.3. I then trained this model with a <code class="docutils literal notranslate"><span class="pre">learning</span> <span class="pre">rate</span> <span class="pre">of</span> <span class="pre">0.01</span></code> and a <code class="docutils literal notranslate"><span class="pre">weight</span> <span class="pre">decay</span> <span class="pre">of</span> <span class="pre">0.01</span></code>. The results show an <code class="docutils literal notranslate"><span class="pre">accuracy</span> <span class="pre">of</span> <span class="pre">0.73</span></code> which is simialr, though slightly lower, than the accuracy of the <a class="reference external" href="#Deliverable-7-ML-classifier-results">scikit learn ensemble classifier</a> of 0.76.
 Below you can see the definitino of the model, the confusion matrix, the learning rate of the model, as well as the weights of the trained model.</p>
-<div style="text-align: center">
-   <img src="img/nn/NN_model.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/nn/NN_p.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/nn/NN_confusion.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_loss.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay0.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay3.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay5.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay7.png" width="400px;" alt=""/>
-   <br /><sub><b>results of the neural network</b></sub>
-</div></div>
+<p><img alt="task" src="_images/NN_model.png" />
+<img alt="task" src="_images/NN_p.png" />
+<img alt="task" src="_images/NN_confusion.png" />
+<img alt="task" src="_images/NN_lay0.png" />
+<img alt="task" src="_images/NN_lay3.png" />
+<img alt="task" src="_images/NN_lay5.png" />
+<img alt="task" src="_images/NN_lay7.png" /></p>
+</div>
 </div>
 </div>
 

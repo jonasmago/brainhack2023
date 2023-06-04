@@ -15,13 +15,20 @@ kernelspec:
 (intro)=
 # Introduction
 
+<div style="text-align: left;">
+<a href="https://github.com/jonasmago">
+   <img src="https://avatars.githubusercontent.com/u/57872952?s=400&u=6d910b22810b2a9d1f24be397cc71a279db91c87&v=4" width="150px;" alt=""/>
+   <br /><sub><b>Jonas Mago</b></sub>
+</a>
+</div>
+
+
 This is the `jupyter book` presentation of my work during [Brainhack2023](https://school-brainhack.github.io/). The complete presentation of my results as well as the replicable source code can be found [here](https://github.com/brainhack-school2023/jonas_project) 
 
-<div style="text-align: center;">
-   <img src="img/tulpa.jpg" height="160px;" alt=""/>
-   <img src="img/deities.jpg" height="160px;" alt=""/>
-   <img src="img/brain.png" height="160px;" alt=""/>
-</div>
+
+![task](./img/tulpa.jpg)
+![task](./img/deities.jpg)
+![task](./img/brain.png)
 
 
 
@@ -42,15 +49,10 @@ Through neuroimaging, we aim to investigate these questions, seeking to shed lig
 
 To get a better understanding of Tulpamancy you can check the following [video](https://www.youtube.com/watch?v=f3nf6NOPyr8). The video summarises the most important tipps for creating tulpas. These tipps are sourced from the reddit thread [`r/tulpas`](https://www.reddit.com/r/Tulpas/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=f3nf6NOPyr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
 ## Deliverables
 
 In addition to the deliverables below, you can find a more extensive report of this project on this [website](https://jonasmago.github.io/brainhack2023/intro.html).
-
-
 
 <div style="text-align: center;">
    <a href="https://jonasmago.com">

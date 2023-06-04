@@ -16,9 +16,7 @@ kernelspec:
 (results)=
 # Results
 
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/tasks.png" height="200px;" alt=""/>
-</div>
+![task](./img/tasks.png)
 
 ## Progress overview
 
@@ -64,12 +62,12 @@ The repository of this project can be found [here](https://github.com/mtl-brainh
 I have used `Nilearn` to compute a GLM that compares different conditions of the task. Specifically, I am interested in teh respective contrasts between **self**, **tulpa**, and **friend**. I am interested in these contrasts for the preparation and writing phase respectively. I have computed the GLM on fmriprep prepreocessed data. I have then created a design matrix that integrates the timing files (first two columes) as well as well as some movement regressors (see figure below). To incorporate the movement regressors I have used the `load_confounds_strategy` from nilearn with the following parameters: `denoise_strategy="scrubbing", motion="basic", wm_csf="basic"`. 
 I have then computed a second level analysis that combines the individual beta maps into a group level contrast between the different conditions (see design matrix below). As a result I receive z-scores of each voxel, indicating how much that voxel differs across the two compared condition. The plot below displays these z-scores for comparing the self-write with the tulpa-write condition. A z-score of 3.0 is equivalent to a 99% confidence interval, a z-score of 2.3 is equivalent to a 95% confidence interval. 
 
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/dm_first.png" height="420px;" alt=""/>
-   <img src="img/dm_second.png" height="420;" alt=""/>
-   <img src="img/SSW-STW_paired_thres.png" width="400px;" alt=""/>
-   <img src="img/SSW-STW_unpaired.png" width="400px;" alt=""/>
-</div>
+
+![task](./img/dm_first.png)
+![task](./img/dm_second.png)
+![task](./img/SSW-STW_paired_thres.png)
+![task](./img/SSW-STW_unpaired.png)
+
 
 I then used [Neuro Maps](https://netneurolab.github.io/neuromaps/user_guide/nulls.html) to compute the pearson-r correlation between the first level outputs computed with Nilearn to those I previously computed with SPM. To test for the significance of these comparisons, I re-computed the pearson-r for random pairs. The r values of the true (matched) pairs have a mean of 61.32 while the mean of the random (unmatched) pairs is 17.09. A two-sample t-test revleaed that this difference is significant: **T-stat: -26.24** and a **p-value=0.000**. 
 
@@ -78,24 +76,21 @@ I then used [Neuro Maps](https://netneurolab.github.io/neuromaps/user_guide/null
 > :information_source: unmatched pairs are between software, between subject, between contrast, between run 
 
 
-<div style="text-align: center; background-color: white; border: 1px solid #000; padding: 20px;">
-   <img src="img/spm_vs_nilearn.png" height="420px;" alt=""/>
-</div>
+![task](./img/spm_vs_nilearn.png)
+
 
 ### Deliverable 5: Connectome results
 
 I have parcellated the brain into 39 regions based on the [probabilistic msdl atlas](https://nilearn.github.io/dev/modules/generated/nilearn.datasets.fetch_atlas_msdl.html). A probabilistic atlas assigns a probability to each voxel, indicating how likely it is that that voxel belongs to a specific region. I have then computed the correlation between all of these 39 regions, resulting into a connectome of shape 39*39. Given that that the correlation measure is none directive, the upper and lower triangle of the connectome mirror each other. Below is an example of a connectome for one subject and one condition.
 
-<div style="text-align: center">
-   <img src="img/connectome.png" width="600px;" alt=""/>
-</div>
+![task](./img/connectome.png)
+
 
 ### Deliverable 6: Seed-to-Voxel connectivity results
 I have previously computed a gPPI for this dataset using CONN. I wanted to replicate this task dependent seed to voxel correlation using Nilearn. I have specified the seed based on the group peak activation in the SMA, using the results from the SPM and Randomise analysis. Seed coordination in MNI space are `(-4, 12, 55)`. I have then constructed a sphere around this voxel with a radius of 5 mm. Using this ROI, correlations to all voxels based by task condition were computed. Below is an illustrative example of the connectivity values for one subject and one condition.
 
-<div style="text-align: center">
-   <img src="img/gPPI.png" width="600px;" alt=""/>
-</div>
+![task](./img/gPPI.png)
+
 
 ### Deliverable 7: ML-classifier results
 
@@ -110,54 +105,43 @@ The aim was to train a classifier that can accurately distinguish between differ
 
 > Average accuracy = 0.76 <br/>
 > P-value (on 100 permutations): p=0.00
-<div style="text-align: center">
-   <img src="img/ml/ml_p-w_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_p-w_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_p-w_glass.png" width="400px;" alt=""/>
-</div>
 
-<br/>
+![task](./img/ml/ml_p-w_conf.png)
+![task](./img/ml/ml_p-w_weights.png)
+![task](./img/ml/ml_p-w_glass.png)
+
 
 **Write condition**
 
 > Average accuracy = 0.52 <br/>
 > P-value (on 100 permutations): p=0.32
-<div style="text-align: center">
-   <img src="img/ml/ml_w_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_w_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_w_glass.png" width="400px;" alt=""/>
-</div>
+![task](./img/ml/ml_w_conf.png)
+![task](./img/ml/ml_w_weights.png)
+![task](./img/ml/ml_w_glass.png)
 
-<br/>
 
 **Prep condition**
 
 > Average accuracy = 0.37 <br/>
 > P-value (on 100 permutations): p=0.00
-<div style="text-align: center">
-   <img src="img/ml/ml_p_conf.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/ml/ml_p_weights.png" width="400px;" alt=""/>
-   <img src="img/ml/ml_p_glass.png" width="400px;" alt=""/>
-</div>
+
+![task](./img/ml/ml_p_conf.png)
+![task](./img/ml/ml_p_weights.png)
+![task](./img/ml/ml_p_glass.png)
+
+
 
 ### Deliverable 8: Deep neural network encoding results
 
 Building on what I have done with the ML classifiers, I wanted to explore if I could achieve the same resutls with a Neural Netowrk. I used `PyTorch` to build a `Multilayer Perceptron` with 4 linear layers, 3 rectified linear unit, and one dropout layer with a threshold of 0.3. I then trained this model with a `learning rate of 0.01` and a `weight decay of 0.01`. The results show an `accuracy of 0.73` which is simialr, though slightly lower, than the accuracy of the [scikit learn ensemble classifier](#Deliverable-7-ML-classifier-results) of 0.76. 
 Below you can see the definitino of the model, the confusion matrix, the learning rate of the model, as well as the weights of the trained model. 
 
-<div style="text-align: center">
-   <img src="img/nn/NN_model.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/nn/NN_p.png" width="400px;" alt=""/>
-   <br/>
-   <img src="img/nn/NN_confusion.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_loss.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay0.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay3.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay5.png" width="400px;" alt=""/>
-   <img src="img/nn/NN_lay7.png" width="400px;" alt=""/>
-   <br /><sub><b>results of the neural network</b></sub>
-</div>
+
+![task](./img/nn/NN_model.png)
+![task](./img/nn/NN_p.png)
+![task](./img/nn/NN_confusion.png)
+![task](./img/nn/NN_lay0.png)
+![task](./img/nn/NN_lay3.png)
+![task](./img/nn/NN_lay5.png)
+![task](./img/nn/NN_lay7.png)
+
