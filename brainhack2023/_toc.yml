@@ -4,5 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: page1
-- file: page2
+- file: results
+- file: todo
+- file: feedback
+- file: tipps
