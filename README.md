@@ -12,7 +12,7 @@ If you'd like to develop on and build this jupter book, you should:
 - Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 - Run `jb build brainhack2023/`
 
-A fully-rendered HTML version of the book will be built in `todo-procrastinator/_build/html/`.
+A fully-rendered HTML version of the book will be built in `brainhack2023/_build/html/`.
 
 ### Hosting the book
 
