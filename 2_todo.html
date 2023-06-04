@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Repository to show my work from Brainhack 2023</title>
+    <title>My to-do list &#8212; Repository to show my work from Brainhack 2023</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,17 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <link rel="index" title="Index" href="#" />
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Feedback from the final presentation" href="3_feedback.html" />
+    <link rel="prev" title="Results" href="1_results.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,14 +96,14 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_results.html">
    Results
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="2_todo.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    My to-do list
   </a>
  </li>
@@ -141,6 +150,26 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/2_todo.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/2_todo.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -152,7 +181,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jonasmago/brainhack2023/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jonasmago/brainhack2023/issues/new?title=Issue%20on%20page%20%2F2_todo.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -168,6 +197,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jonasmago/brainhack2023/main?urlpath=tree/todo-procrastinator/2_todo.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -180,7 +226,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>My to-do list</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -191,19 +237,84 @@
             
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="my-to-do-list">
+<span id="todo"></span><h1>My to-do list<a class="headerlink" href="#my-to-do-list" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>[X] preprocess the fMRI data with fmriprep</p></li>
+<li><p>[X] run GLMs using SPM for the first level and FSL Randomise for the second level</p></li>
+<li><p>[X] replicate GLM in Nilearn</p>
+<ul>
+<li><p>[X] replicate a GLM in Nilearn</p></li>
+<li><p>[X] compute the correlation between first-level beta maps in the SPM and Nilearn analysis</p></li>
+<li><p>[ ] replicate the Nilearn GLM with the exact same parameters as in SPM</p>
+<ul>
+<li><p>fd_threshold = 1 (default is 0.5mm)</p></li>
+<li><p>change from <code class="docutils literal notranslate"><span class="pre">load_confound_strategy</span></code> to <code class="docutils literal notranslate"><span class="pre">load_confound</span></code>as it’s more custamizable and allows to match parameters of SPM.</p></li>
+<li><p>check if I used a high pass filter in SPM, if not deactivate it in Nilearn.</p></li>
+<li><p>check if I standardized in SPM, if not deactivte it in Nilearn.</p></li>
+</ul>
+</li>
+<li><p>[ ] Cluster correct the Nilearn second-level contrasts using <a class="reference external" href="https://nilearn.github.io/dev/modules/generated/nilearn.glm.cluster_level_inference.html#nilearn.glm.cluster_level_inference"><code class="docutils literal notranslate"><span class="pre">cluster_level-inference</span></code></a>.</p></li>
+<li><p>[ ] re-run the GLMs including a brain mask that excludes the cerebellum and brain stem. As we are not interested in the analysis of these regions their exclusion is legit. I can use a mask from brainvolt that I can <a class="reference external" href="https://neurovault.org/collections/6196/">download here</a>.</p></li>
+</ul>
+</li>
+<li><p>[X] connectivity analysis</p>
+<ul>
+<li><p>[X] compute connectome for all conditions and save as <code class="docutils literal notranslate"><span class="pre">.npy</span></code></p></li>
+<li><p>[ ] compute <code class="docutils literal notranslate"><span class="pre">graph</span> <span class="pre">theory</span></code> metrics to characterise and compare the connectomes. François Paugam recommended to look into the <a class="reference external" href="http://www.cs.cmu.edu/~saketn/files/Sporns_Book.pdf">Networks of the Brain</a> as an introduction.</p></li>
+</ul>
+</li>
+<li><p>[X] compute seed-to-voxel correlations</p></li>
+<li><p>[X] ML classifier</p>
+<ul>
+<li><p>[X] ML classifier on connectomes</p></li>
+<li><p>[ ] ML classifier on seed-to-voxel maps</p></li>
+<li><p>[ ] ML classifier on the average activity for each of the 10 trials (not entire runs) cropped to an ROI in the SMA</p></li>
+</ul>
+</li>
+<li><p>[X] Deep Neural Network Decoder using PyTorch</p></li>
+</ul>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="1_results.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Results</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="3_feedback.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Feedback from the final presentation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>

@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index &#8212; Repository to show my work from Brainhack 2023</title>
+    <title>Feedback from the final presentation &#8212; Repository to show my work from Brainhack 2023</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -42,8 +42,17 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <link rel="index" title="Index" href="#" />
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tipps and Tricks" href="4_tipps.html" />
+    <link rel="prev" title="My to-do list" href="2_todo.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,7 +96,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1_results.html">
    Results
@@ -98,8 +107,8 @@
    My to-do list
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="3_feedback.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Feedback from the final presentation
   </a>
  </li>
@@ -141,6 +150,26 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        <a class="dropdown-buttons"
+            href="_sources/3_feedback.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download notebook file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/3_feedback.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
@@ -152,7 +181,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/jonasmago/brainhack2023/issues/new?title=Issue%20on%20page%20%2Fgenindex.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/jonasmago/brainhack2023/issues/new?title=Issue%20on%20page%20%2F3_feedback.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -168,6 +197,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/jonasmago/brainhack2023/main?urlpath=tree/todo-procrastinator/3_feedback.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -180,7 +226,7 @@
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1></h1>
+                <h1>Feedback from the final presentation</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -191,19 +237,66 @@
             
               <div>
                 
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- 
+  <div class="section" id="feedback-from-the-final-presentation">
+<span id="feedback"></span><h1>Feedback from the final presentation<a class="headerlink" href="#feedback-from-the-final-presentation" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>visualise things in MRIcroGL, soon implemented in nilearn as <code class="docutils literal notranslate"><span class="pre">niview</span></code></p></li>
+<li><p>change my pearson-r values to [-1, 1] (currently [-100,100])</p></li>
+<li><p>for comparing nilearn and spm beta maps: specify not-matched. E.g.:</p>
+<ul>
+<li><p>between software, within subject, within contrast, within run</p></li>
+<li><p>between software, between subject, between contrast, between run</p></li>
+</ul>
+</li>
+<li><p>feature selection must be either on (A) train set or (B) integrated in cross-validation. Make sure it’s not selecting featuers on the entier dataset –&gt; danger of overfitting!</p></li>
+<li><p>r2 is a measure for the percentage of variance explained. Not relevant here, thus, remove it.</p></li>
+<li><p>explain permutation test for significance testing.</p></li>
+<li><p>apply the classifer on beta maps per trials (there are 10 trials per run). I can use ROIs or entire beta masks. The model will take care of the many variables.</p></li>
+<li><p>try a searchlight appraoch: train a classifer on different ROIs or voxels and then compare the accuracy. This could lead to a accuracy map with voxel resolution, however, this is computationally expensive.</p></li>
+<li><p>it’s important to  <strong>de-mean</strong> my data before doing this (e.g. use z-score).</p></li>
+<li><p>look into <strong>stratified cross validation</strong> to deal with multiple runs per subject in the classifier. If I use stratification this shouldn’t be a problem.</p></li>
+</ul>
 </div>
 
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="2_todo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">My to-do list</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="4_tipps.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tipps and Tricks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
