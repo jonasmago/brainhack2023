@@ -3,6 +3,7 @@
 
 title: Repository to show my work from Brainhack 2023
 author: J. Mago
+copyright: "2023"
 logo: logo.png
 
 # Force re-execution of notebooks on each build.
